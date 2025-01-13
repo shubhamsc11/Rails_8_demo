@@ -1,0 +1,6 @@
+port: 5000
+environment: development
+timeout: 30
+
+
+# To run the server of Thin - bundle exec thin start -C config/thin.yml

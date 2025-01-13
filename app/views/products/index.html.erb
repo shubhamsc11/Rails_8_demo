@@ -1,0 +1,15 @@
+<h4><%= t "hello" %></h4>
+<h3><%= t ".title" %></h3>
+
+<%= link_to "New product", new_product_path if authenticated? %>
+<%= link_to "Login", new_session_path unless authenticated? %>
+
+<br>
+<br>
+<div id="products">
+  <% @products.each do |product| %>
+    <div>
+      <%= link_to product.name, product %>
+    </div>
+  <% end %>
+</div>

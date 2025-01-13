@@ -1,0 +1,14 @@
+<% cache @product do %>
+  <h4><%= @product.name %></h4>
+  <p><%= @product.description %></p>
+  <%= image_tag @product.product_image, class: "custom-image" if @product.product_image.attached? %>
+  <br>
+<% end %>
+
+<%= render "inventory", product: @product %>
+
+<%= link_to "Back", products_path %>
+<% if authenticated? %>
+  <%= link_to "Edit", edit_product_path(@product) %>
+  <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% end %>
